@@ -1,6 +1,12 @@
 Vagrant.configure("2") do |config|
   # This will be applied to every vagrant file that comes after it
   config.vm.box = "debian/bullseye64"
+
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.memory = 2048
+    libvirt.random :model => 'random' # Passthrough /dev/random
+  end
+
   # K8s Control Plane
   ## Master Node
   config.vm.define "master" do |k8s_master|
@@ -9,7 +15,7 @@ Vagrant.configure("2") do |config|
     k8s_master.vm.hostname = "master"
     k8s_master.vm.provider "virtualbox" do |v|
       v.customize ["modifyvm", :id, "--audio", "none"]
-      v.memory = 4024
+      v.memory = 2048
       v.cpus = 2
     end
   end
