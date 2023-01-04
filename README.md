@@ -19,6 +19,12 @@ Once the VMs are up and running, you can check their status with `vagrant status
 ```
 ssh-copy-id root@[relevant ip address]
 ```
+Example:
+```
+ssh-copy-id root@172.16.128.4
+ssh-copy-id root@172.16.128.5
+ssh-copy-id root@172.16.128.6
+```
 When prompted, enter the root user password configured in the bootstrap node script.
 
 ## Provision/Create Kubernetes cluster with RKE
