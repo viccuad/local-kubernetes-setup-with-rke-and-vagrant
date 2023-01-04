@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   # This will be applied to every vagrant file that comes after it
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "debian/bullseye64"
   # K8s Control Plane
   ## Master Node
   config.vm.define "master" do |k8s_master|
