@@ -18,7 +18,7 @@ nodes:
     docker_socket: /var/run/docker.sock
 
 # Name of the K8s Cluster
-cluster_name: lukas-cluster
+cluster_name: rke-vagrant-cluster
 
 services:
   kube-api:
